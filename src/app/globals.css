@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+:root {
+  --color-blue-deep: #1b3647;
+  --color-blue: #668498;
+  --color-ivory: #f6f0e8;
+  --color-porcelain: #fffdf9;
+  --color-sand: #e9ddcc;
+  --color-gold: #b68a42;
+  --color-gold-soft: #f0d79f;
+  --color-line: #d9ccbb;
+  --color-muted: #655f58;
+  --shadow-lift: 0 24px 65px rgba(27, 54, 71, 0.14);
+  --color-ink: var(--color-blue-deep);
+  --color-charcoal: #102835;
+  --color-copper: var(--color-gold);
+  --color-soft-gold: var(--color-gold-soft);
+  --color-mist: var(--color-line);
+  --shadow-soft: var(--shadow-lift);
+  --font-manrope: 'Manrope', 'Segoe UI', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --background: var(--color-ivory);
+  --foreground: var(--color-blue-deep);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-cormorant);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(102, 132, 152, 0.12),
+      transparent 28rem
+    ),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-cormorant), serif;
+}
+
+::selection {
+  background: var(--color-blue);
+  color: white;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
