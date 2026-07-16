@@ -115,7 +115,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="max-w-xl">
             <p className="eyebrow">Em destaque</p>
-            <h2 className="mt-4 font-display text-5xl leading-[0.95] text-[var(--color-blue-deep)] md:text-6xl">
+            <h2 className="mt-4 font-display text-3xl leading-[0.95] text-[var(--color-blue-deep)] md:text-4xl md:whitespace-nowrap">
               Escolhas para ficar perto
             </h2>
           </div>
