@@ -5,7 +5,7 @@ import { VoriaBrandMark } from './voria-brand-mark';
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/25 bg-[var(--color-blue)] text-white">
+    <footer className="bg-[var(--color-blue)] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8">
         <div>
           <VoriaBrandMark />
@@ -47,7 +47,7 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-white/55">
+      <div className="px-5 py-5 text-center text-xs text-white/55">
         © 2026 VORIA Jewelry. Vitrine demonstrativa para apresentação comercial.
       </div>
     </footer>

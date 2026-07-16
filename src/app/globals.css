@@ -1,5 +1,13 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Gloock';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/gloock-regular.ttf') format('truetype');
+}
+
 :root {
   --color-blue-deep: #1b3647;
   --color-blue: #668498;
@@ -18,7 +26,7 @@
   --color-mist: var(--color-line);
   --shadow-soft: var(--shadow-lift);
   --font-manrope: 'Manrope', 'Segoe UI', sans-serif;
-  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-cormorant: 'Gloock', Georgia, serif;
   --background: var(--color-ivory);
   --foreground: var(--color-blue-deep);
 }

@@ -26,7 +26,7 @@ export function SiteHeader() {
   });
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/25 bg-[var(--color-blue)] text-[var(--color-ivory)]">
+    <header className="sticky top-0 z-40 bg-[var(--color-blue)] text-[var(--color-ivory)]">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 lg:px-8">
         <Link
           aria-label="Página inicial VORIA Jewelry"

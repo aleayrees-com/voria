@@ -51,7 +51,8 @@ As imagens do protótipo ficam em `public/`:
 - `voria-hero-primary.png`: hero principal com editorial de modelo e peças VORIA;
 - `voria-blue-collection.png`: composição azul para a coleção de brincos;
 - `voria-gold-collection.png`: editorial complementar em dourado e pedra natural;
-- `voria-brand-mark.png`: referência da logo original da VORIA.
+- `voria-brand-mark-transparent.png`: logo transparente usada no header e rodapé;
+- `fonts/gloock-regular.ttf`: fonte editorial Gloock usada nos títulos.
 
 Para trocar uma imagem, adicione o novo arquivo em `public/` e atualize o campo `imageUrl` da peça no catálogo.
 
