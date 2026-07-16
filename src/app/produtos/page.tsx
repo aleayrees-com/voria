@@ -14,7 +14,7 @@ export default function ProductsPage() {
       <div className="max-w-3xl">
         <p className="eyebrow">Catálogo VORIA</p>
         <h1 className="mt-4 font-display text-6xl leading-[0.9] text-[var(--color-blue-deep)] md:text-7xl">
-          Peças para chamar de suas.
+          Peças para chamar de suas
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-7 text-[var(--color-muted)]">
           Esta vitrine apresenta peças demonstrativas. Valores, disponibilidade

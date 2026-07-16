@@ -92,8 +92,8 @@ export default function Home() {
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-xl">
             <p className="eyebrow">Coleções</p>
-            <h2 className="mt-4 font-display text-5xl leading-[0.95] text-[var(--color-blue-deep)] md:text-6xl">
-              Detalhes que falam por você.
+            <h2 className="mt-4 font-display text-4xl leading-[0.95] text-[var(--color-blue-deep)] md:text-[2.5rem] md:whitespace-nowrap">
+              Detalhes que falam por você
             </h2>
           </div>
           <Link
@@ -116,7 +116,7 @@ export default function Home() {
           <div className="max-w-xl">
             <p className="eyebrow">Em destaque</p>
             <h2 className="mt-4 font-display text-5xl leading-[0.95] text-[var(--color-blue-deep)] md:text-6xl">
-              Escolhas para ficar perto.
+              Escolhas para ficar perto
             </h2>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -142,7 +142,7 @@ export default function Home() {
               Curadoria VORIA
             </p>
             <h2 className="mt-4 font-display text-5xl leading-[0.94] md:text-6xl">
-              Ouro que encontra o seu ritmo.
+              Ouro que encontra o seu ritmo
             </h2>
             <p className="mt-5 max-w-md text-base leading-7 text-white/80">
               Formas orgânicas, brilho suave e peças feitas para compor o seu
@@ -172,7 +172,7 @@ export default function Home() {
         <div className="flex flex-col justify-center py-5 lg:pl-12">
           <p className="eyebrow">O seu ritual</p>
           <h2 className="mt-4 max-w-xl font-display text-5xl leading-[0.95] text-[var(--color-blue-deep)] md:text-6xl">
-            Joias para viver com você, não para esperar uma ocasião.
+            Joias para viver com você, não para esperar uma ocasião
           </h2>
           <p className="mt-6 max-w-lg text-base leading-7 text-[var(--color-muted)]">
             Uma coleção demonstrativa pensada como um convite: escolha a peça,
