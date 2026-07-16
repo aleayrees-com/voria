@@ -42,31 +42,31 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative isolate min-h-[min(760px,82vh)] overflow-hidden bg-[var(--color-blue-deep)]">
+      <section className="relative isolate min-h-[min(400px,48vh)] overflow-hidden bg-[var(--color-blue-deep)]">
         <Image
           alt="Modelo usando a coleção VORIA em ouro sobre seda azul"
-          className="object-cover object-[55%_center]"
+          className="object-cover object-center"
           fill
           priority
           sizes="100vw"
-          src="/voria-hero-primary.png"
+          src="/voria-hero.png"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(27,54,71,0.96)] via-[rgba(27,54,71,0.76)] to-[rgba(27,54,71,0.05)]" />
-        <div className="relative mx-auto flex min-h-[min(760px,82vh)] max-w-7xl items-end px-5 py-14 lg:px-8 lg:py-20">
+        <div className="relative mx-auto flex min-h-[min(400px,48vh)] max-w-7xl items-center px-5 py-8 lg:px-8 lg:py-10">
           <div className="max-w-2xl text-white">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-gold-soft)]">
               Joias que acompanham histórias
             </p>
-            <h1 className="mt-6 font-display text-6xl leading-[0.84] tracking-[-0.045em] sm:text-7xl md:text-8xl lg:text-9xl">
+            <h1 className="mt-4 font-display text-5xl leading-[0.84] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-7xl">
               A forma de
               <br />
-              <em>brilhar</em> é sua.
+              <em>brilhar</em> é sua
             </h1>
-            <p className="mt-7 max-w-lg text-base leading-7 text-white/78 md:text-lg">
+            <p className="mt-5 max-w-lg text-sm leading-6 text-white/78 md:text-base md:leading-7">
               VORIA traduz o luxo de todos os dias em joias de linhas fluidas,
-              textura e presença.
+              textura e presença
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
                 className="inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-full bg-[var(--color-ivory)] px-6 text-sm font-bold text-[var(--color-blue-deep)] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
                 href="/produtos"
