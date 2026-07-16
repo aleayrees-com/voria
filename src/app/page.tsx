@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 import { CategoryCard } from '../components/category-card';
 import { ProductCard } from '../components/product-card';
-import { featuredCategories, getFeaturedProducts } from '../lib/catalog';
+import { categories, getFeaturedProducts } from '../lib/catalog';
 import { createWhatsAppCheckoutUrl } from '../lib/checkout';
 import { storeConfig } from '../lib/store-config';
 
@@ -44,12 +44,12 @@ export default function Home() {
     <>
       <section className="relative isolate min-h-[min(760px,82vh)] overflow-hidden bg-[var(--color-blue-deep)]">
         <Image
-          alt="Joias VORIA em ouro e pérola sobre seda azul"
-          className="object-cover object-[62%_center]"
+          alt="Modelo usando a coleção VORIA em ouro sobre seda azul"
+          className="object-cover object-[55%_center]"
           fill
           priority
           sizes="100vw"
-          src="/voria-hero.png"
+          src="/voria-hero-primary.png"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(27,54,71,0.96)] via-[rgba(27,54,71,0.76)] to-[rgba(27,54,71,0.05)]" />
         <div className="relative mx-auto flex min-h-[min(760px,82vh)] max-w-7xl items-end px-5 py-14 lg:px-8 lg:py-20">
@@ -104,8 +104,8 @@ export default function Home() {
             <ArrowRight aria-hidden="true" size={17} />
           </Link>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredCategories.map((category) => (
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {categories.map((category) => (
             <CategoryCard category={category} key={category.slug} />
           ))}
         </div>
@@ -127,14 +127,46 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <div className="relative isolate min-h-[430px] overflow-hidden rounded-[1.5rem] bg-[var(--color-blue)] md:min-h-[520px]">
+          <Image
+            alt="Seleção VORIA de joias douradas sobre seda azul-clara"
+            className="object-cover"
+            fill
+            sizes="(min-width: 1280px) 1280px, 100vw"
+            src="/voria-banner-collection.png"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(24,45,59,0.85)] via-[rgba(24,45,59,0.46)] to-transparent" />
+          <div className="relative flex min-h-[430px] max-w-xl flex-col justify-end p-8 text-white md:min-h-[520px] md:p-12">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-gold-soft)]">
+              Curadoria VORIA
+            </p>
+            <h2 className="mt-4 font-display text-5xl leading-[0.94] md:text-6xl">
+              Ouro que encontra o seu ritmo.
+            </h2>
+            <p className="mt-5 max-w-md text-base leading-7 text-white/80">
+              Formas orgânicas, brilho suave e peças feitas para compor o seu
+              cotidiano.
+            </p>
+            <Link
+              className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-white/45 px-5 py-3 text-sm font-bold transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+              href="/produtos"
+            >
+              Ver a coleção
+              <ArrowRight aria-hidden="true" size={17} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto grid max-w-7xl gap-8 px-5 py-20 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
         <div className="relative min-h-[540px] overflow-hidden rounded-[1.5rem] bg-[var(--color-blue)]">
           <Image
-            alt="Modelo usando joias VORIA"
+            alt="Seleção de joias VORIA em ouro sobre pedra natural"
             className="object-cover"
             fill
             sizes="(min-width: 1024px) 42vw, 100vw"
-            src="/voria-rings.png"
+            src="/voria-gold-collection.png"
           />
         </div>
         <div className="flex flex-col justify-center py-5 lg:pl-12">

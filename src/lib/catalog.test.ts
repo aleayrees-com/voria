@@ -5,6 +5,7 @@ import {
   getCategoryBySlug,
   getFeaturedProducts,
   getProductBySlug,
+  getProductsByCategory,
   products,
 } from './catalog';
 
@@ -16,7 +17,10 @@ describe('VORIA demonstrative catalog', () => {
       'colares',
       'pulseiras',
     ]);
-    expect(products).toHaveLength(6);
+    expect(categories.every((category) => Boolean(category.imageUrl))).toBe(
+      true,
+    );
+    expect(products).toHaveLength(8);
     expect(products.every((product) => product.status === 'available')).toBe(
       true,
     );
@@ -31,5 +35,7 @@ describe('VORIA demonstrative catalog', () => {
       'colar-alma',
     ]);
     expect(getProductBySlug('peca-ausente')).toBeUndefined();
+    expect(getProductsByCategory('colares')).toHaveLength(2);
+    expect(getProductsByCategory('pulseiras')).toHaveLength(2);
   });
 });

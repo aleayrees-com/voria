@@ -5,6 +5,7 @@ export interface ProductCategory {
   readonly name: string;
   readonly eyebrow: string;
   readonly description: string;
+  readonly imageUrl: string;
 }
 
 export interface Product {

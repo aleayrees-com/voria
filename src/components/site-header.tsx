@@ -8,6 +8,7 @@ import { categories } from '../lib/catalog';
 import { createWhatsAppCheckoutUrl } from '../lib/checkout';
 import { storeConfig } from '../lib/store-config';
 import { useCart } from './cart-provider';
+import { VoriaBrandMark } from './voria-brand-mark';
 
 const navigation = [
   { href: '/', label: 'Início' },
@@ -29,15 +30,10 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 lg:px-8">
         <Link
           aria-label="Página inicial VORIA Jewelry"
-          className="group inline-flex flex-col"
+          className="inline-flex"
           href="/"
         >
-          <span className="font-display text-3xl leading-none tracking-[0.14em] text-[var(--color-blue-deep)]">
-            VORIA
-          </span>
-          <span className="mt-1 text-[10px] font-semibold uppercase text-[var(--color-copper)]">
-            Jewelry · USA — BRA
-          </span>
+          <VoriaBrandMark />
         </Link>
 
         <nav

@@ -8,8 +8,12 @@ import {
   Trash2,
   X,
 } from 'lucide-react';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
+import {
+  CART_DRAWER_EXIT_DELAY_MS,
+  shouldKeepCartDrawerMounted,
+} from '../lib/cart-drawer-state';
 import { createWhatsAppCheckoutUrl } from '../lib/checkout';
 import { storeConfig } from '../lib/store-config';
 import { useCart } from './cart-provider';
@@ -30,6 +34,7 @@ export function CartDrawer() {
   const dialogRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const previouslyFocusedElementRef = useRef<Element | null>(null);
+  const [hasFinishedClosing, setHasFinishedClosing] = useState(true);
 
   const checkoutUrl = useMemo(
     () =>
@@ -40,6 +45,23 @@ export function CartDrawer() {
       }),
     [items],
   );
+
+  useEffect(() => {
+    if (isOpen) {
+      const openingFrame = window.requestAnimationFrame(() => {
+        setHasFinishedClosing(false);
+      });
+
+      return () => window.cancelAnimationFrame(openingFrame);
+    }
+
+    const closingTimer = window.setTimeout(
+      () => setHasFinishedClosing(true),
+      CART_DRAWER_EXIT_DELAY_MS,
+    );
+
+    return () => window.clearTimeout(closingTimer);
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -94,7 +116,7 @@ export function CartDrawer() {
     };
   }, [closeCart, isOpen]);
 
-  if (!isOpen) {
+  if (!shouldKeepCartDrawerMounted(isOpen, hasFinishedClosing)) {
     return null;
   }
 
@@ -102,7 +124,11 @@ export function CartDrawer() {
     <div className="fixed inset-0 z-50">
       <button
         aria-label="Fechar carrinho"
-        className="absolute inset-0 cursor-pointer bg-black/45 backdrop-blur-sm"
+        className={`absolute inset-0 cursor-pointer bg-black/45 backdrop-blur-sm transition-opacity duration-300 motion-reduce:transition-none ${
+          isOpen && !hasFinishedClosing
+            ? 'opacity-100'
+            : 'pointer-events-none opacity-0'
+        }`}
         onClick={closeCart}
         type="button"
       />
@@ -110,7 +136,9 @@ export function CartDrawer() {
         ref={dialogRef}
         aria-label="Carrinho"
         aria-modal="true"
-        className="absolute right-0 top-0 flex h-full w-full max-w-[440px] flex-col bg-[var(--color-porcelain)] shadow-2xl"
+        className={`absolute right-0 top-0 flex h-full w-full max-w-[440px] flex-col bg-[var(--color-porcelain)] shadow-2xl transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+          isOpen && !hasFinishedClosing ? 'translate-x-0' : 'translate-x-full'
+        }`}
         role="dialog"
       >
         <div className="flex items-center justify-between border-b border-[var(--color-mist)] px-6 py-5">
