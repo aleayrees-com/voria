@@ -5,7 +5,7 @@ import { VoriaBrandMark } from './voria-brand-mark';
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-black/10 bg-[var(--color-charcoal)] text-white">
+    <footer className="border-t border-white/25 bg-[var(--color-blue)] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8">
         <div>
           <VoriaBrandMark />
